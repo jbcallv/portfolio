@@ -39,6 +39,15 @@
     <link rel="icon" type="image/ico" href="favicon.ico" />
   </head>
   <body>
+    <script>
+      (function () {
+        let redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
     <!-- quasar:entry-point -->
   </body>
 </html>
