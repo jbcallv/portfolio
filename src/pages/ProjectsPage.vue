@@ -2,7 +2,7 @@
   <q-page padding>
     <div class="row flex-center q-pb-md">
       <q-avatar size="150px">
-        <q-img :src="avatarUrl" />
+        <q-img :src="githubAvatarUrl" />
       </q-avatar>
     </div>
 
@@ -15,8 +15,12 @@
       />
     </div>
 
-    <div class="row flex-center text-center q-pb-md">
-      <div class="col-md-1">{{ githubFollowerCount }} followers</div>
+    <div class="row flex-center text-center q-pb-md text-body1">
+      {{ githubProfileBio }}
+    </div>
+
+    <div class="row flex-center text-center q-pb-md text-body1">
+      {{ githubFollowerCount }} followers
     </div>
 
     <q-table
@@ -133,8 +137,10 @@ export default {
       import.meta.env.VITE_GITHUB_USERNAME
     }`;
 
-    const avatarUrl = ref(null);
+    const githubAvatarUrl = ref(null);
     const githubFollowerCount = ref(0);
+    const githubProfileBio = ref("");
+
     const rows = ref([]);
 
     setGithubProfileData();
@@ -143,8 +149,9 @@ export default {
     async function setGithubProfileData() {
       const response = await axios.get(githubApiUrl);
 
-      avatarUrl.value = response.data.avatar_url;
+      githubAvatarUrl.value = response.data.avatar_url;
       githubFollowerCount.value = response.data.followers;
+      githubProfileBio.value = response.data.bio;
     }
 
     async function setGithubRepositoryData() {
@@ -166,7 +173,14 @@ export default {
       rows.value = formattedRepositories;
     }
 
-    return { columns, rows, avatarUrl, githubFollowerCount, openURL };
+    return {
+      columns,
+      rows,
+      githubAvatarUrl,
+      githubProfileBio,
+      githubFollowerCount,
+      openURL,
+    };
   },
 };
 </script>
