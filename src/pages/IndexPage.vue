@@ -46,19 +46,25 @@
         />
       </div>
 
-      <div class="col-12 col-md-5 col-lg-4 col-xl-3 text-center gt-sm">
-        <div class="row justify-center full-height">
-          <div
-            class="col-6 bg-dark"
-            style="position: absolute; height: 590px; width: 400px"
-          ></div>
-          <q-img
-            src="images/joseph.jpg"
-            class="q-mt-lg shadow-6"
-            style="height: 590px; width: 350px"
-          />
+      <transition
+        appear
+        enter-active-class="animated fadeIn"
+        leave-active-class="animated fadeOut"
+      >
+        <div class="col-12 col-md-5 col-lg-4 col-xl-3 text-center gt-sm">
+          <div class="row justify-center full-height">
+            <div
+              class="col-6 bg-dark"
+              style="position: absolute; height: 590px; width: 400px"
+            ></div>
+            <q-img
+              src="images/joseph.jpg"
+              class="q-mt-lg shadow-6"
+              style="height: 590px; width: 350px"
+            />
+          </div>
         </div>
-      </div>
+      </transition>
     </div>
   </q-page>
 </template>
