@@ -9,7 +9,7 @@
           ></div>
           <q-img
             src="images/joseph.jpg"
-            class="q-mt-lg"
+            class="q-mt-lg shadow-6"
             style="height: 590px; width: 330px"
           />
         </div>
@@ -54,7 +54,7 @@
           ></div>
           <q-img
             src="images/joseph.jpg"
-            class="q-mt-lg"
+            class="q-mt-lg shadow-6"
             style="height: 590px; width: 350px"
           />
         </div>

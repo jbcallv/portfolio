@@ -14,7 +14,7 @@
 
         <q-toolbar-title> JOSEPH CALL </q-toolbar-title>
 
-        <q-tabs v-model="tab" class="gt-md">
+        <q-tabs v-model="tab" class="gt-md" indicator-color="accent">
           <q-route-tab
             v-for="link in essentialLinks"
             :key="link.title"

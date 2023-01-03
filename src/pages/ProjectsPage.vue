@@ -86,7 +86,7 @@ const rows = [
   {
     name: "repo1",
     description: "this is an example repo for nothing",
-    language: "C++",
+    language: "c++",
     stars: 5,
     forks: 3,
   },
