@@ -1,17 +1,40 @@
 <template>
   <q-page padding>
+    <div class="row flex-center q-pb-md">
+      <q-avatar size="150px">
+        <q-img :src="avatarUrl" />
+      </q-avatar>
+    </div>
+
+    <div class="row flex-center q-pb-md">
+      <q-btn
+        no-caps
+        label="@jbcallv"
+        class="text-accent"
+        @click="openURL('https://github.com/jbcallv')"
+      />
+    </div>
+
+    <div class="row flex-center text-center q-pb-md">
+      <div class="col-md-1">{{ githubFollowerCount }} followers</div>
+    </div>
+
     <q-table
       grid
-      title="Projects"
       :rows="rows"
       :columns="columns"
       row-key="name"
-      :filter="filter"
       hide-header
+      :rows-per-page-options="[10]"
     >
       <template v-slot:item="props">
         <div class="q-pa-xs col-xs-12 col-sm-6 col-md-6">
-          <q-card class="bg-dark">
+          <q-card
+            v-ripple
+            class="bg-dark cursor-pointer q-hoverable"
+            @click="openURL(props.row.link)"
+          >
+            <div class="q-focus-helper"></div>
             <q-card-section class="text-h6 text-weight-bold">
               {{ props.row.name }}
             </q-card-section>
@@ -46,7 +69,9 @@
 </template>
 
 <script>
+import { openURL } from "quasar";
 import { ref } from "vue";
+import axios from "axios";
 
 const columns = [
   {
@@ -80,22 +105,11 @@ const columns = [
     field: "forks",
     sortable: true,
   },
-];
-
-const rows = [
   {
-    name: "repo1",
-    description: "this is an example repo for nothing",
-    language: "c++",
-    stars: 5,
-    forks: 3,
-  },
-  {
-    name: "repo2",
-    description: "this is another example repo for nothing",
-    language: "python",
-    stars: 3,
-    forks: 2,
+    name: "link",
+    align: "center",
+    field: "link",
+    sortable: false,
   },
 ];
 
@@ -103,9 +117,44 @@ export default {
   name: "ProjectsPage",
 
   setup() {
-    const filter = ref("");
+    const githubApiUrl = `https://api.github.com/users/${
+      import.meta.env.VITE_GITHUB_USERNAME
+    }`;
 
-    return { columns, rows, filter };
+    const avatarUrl = ref(null);
+    const githubFollowerCount = ref(0);
+    const rows = ref([]);
+
+    setGithubProfileData();
+    setGithubRepositoryData();
+
+    async function setGithubProfileData() {
+      const response = await axios.get(githubApiUrl);
+
+      avatarUrl.value = response.data.avatar_url;
+      githubFollowerCount.value = response.data.followers;
+    }
+
+    async function setGithubRepositoryData() {
+      const response = await axios.get(`${githubApiUrl}/repos`);
+
+      const formattedRepositories = response.data.map((repository) => {
+        return {
+          name: repository.name,
+          description: repository.description
+            ? repository.description
+            : "No description",
+          language: repository.language ? repository.language : "md",
+          stars: repository.stargazers_count,
+          forks: repository.forks_count,
+          link: repository.html_url,
+        };
+      });
+
+      rows.value = formattedRepositories;
+    }
+
+    return { columns, rows, avatarUrl, githubFollowerCount, openURL };
   },
 };
 </script>
