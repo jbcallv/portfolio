@@ -46,17 +46,17 @@
             <q-card-section>
               <div class="row">
                 <div class="text-body1 q-pr-md">
-                  <q-icon name="code" />
+                  <q-icon name="code" style="vertical-align: text-top" />
                   {{ props.row.language }}
                 </div>
 
                 <div class="text-body1 q-pr-md">
-                  <q-icon name="star" />
+                  <q-icon name="star" style="vertical-align: text-top" />
                   {{ props.row.stars }}
                 </div>
 
                 <div class="text-body1">
-                  <q-icon name="fork_left" />
+                  <q-icon name="fork_left" style="vertical-align: text-top" />
                   {{ props.row.forks }}
                 </div>
               </div>
