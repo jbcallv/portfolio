@@ -6,10 +6,11 @@
       <div class="text-h2" style="opacity: 0.4">Oops. Nothing here...</div>
 
       <q-btn
-        class="q-mt-xl"
-        color="white"
-        text-color="blue"
+        class="q-mt-xl text-weight-regular"
+        color="primary"
+        rounded
         unelevated
+        size="18px"
         to="/"
         label="Go Home"
         no-caps

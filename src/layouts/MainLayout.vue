@@ -16,6 +16,7 @@
 
         <q-tabs v-model="tab" class="gt-md" indicator-color="accent">
           <q-route-tab
+            no-caps
             v-for="link in essentialLinks"
             :key="link.title"
             :name="link.name"
@@ -37,6 +38,14 @@
         />
       </q-list>
     </q-drawer>
+
+    <q-footer class="q-pa-md" style="background: #121212">
+      <q-toolbar>
+        <q-toolbar-title class="text-grey text-body1">
+          &#169; 2022 Joseph Call
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
 
     <q-page-container class="q-px-md">
       <router-view />

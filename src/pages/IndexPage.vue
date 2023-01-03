@@ -39,7 +39,7 @@
           no-caps
           rounded
           size="18px"
-          class="text-weight-light gt-sm"
+          class="text-weight-regular gt-sm"
           label="My Projects"
           color="primary"
           to="/projects"
