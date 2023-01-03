@@ -14,8 +14,6 @@
 
         <q-toolbar-title> JOSEPH CALL </q-toolbar-title>
 
-        <q-space />
-
         <q-tabs v-model="tab" class="gt-md">
           <q-route-tab
             v-for="link in essentialLinks"
@@ -62,6 +60,18 @@ const linksList = [
     icon: "school",
     link: "/projects",
     name: "projects",
+  },
+  {
+    title: "About",
+    icon: "school",
+    link: "/about",
+    name: "about",
+  },
+  {
+    title: "Contact",
+    icon: "phone",
+    link: "/contact",
+    name: "contact",
   },
 ];
 
