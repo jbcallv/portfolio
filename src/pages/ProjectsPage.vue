@@ -46,17 +46,29 @@
             <q-card-section>
               <div class="row">
                 <div class="text-body1 q-pr-md">
-                  <q-icon name="code" style="vertical-align: text-top" />
+                  <q-icon
+                    name="fa-solid fa-code"
+                    style="vertical-align: text-top"
+                    class="q-pr-xs"
+                  />
                   {{ props.row.language }}
                 </div>
 
                 <div class="text-body1 q-pr-md">
-                  <q-icon name="star" style="vertical-align: text-top" />
+                  <q-icon
+                    name="fa-solid fa-star"
+                    style="vertical-align: text-top"
+                    class="q-pr-xs"
+                  />
                   {{ props.row.stars }}
                 </div>
 
                 <div class="text-body1">
-                  <q-icon name="fork_left" style="vertical-align: text-top" />
+                  <q-icon
+                    name="fa-solid fa-code-branch"
+                    style="vertical-align: text-top"
+                    class="q-pr-xs"
+                  />
                   {{ props.row.forks }}
                 </div>
               </div>

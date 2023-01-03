@@ -7,7 +7,7 @@
           flat
           dense
           round
-          icon="menu"
+          icon="fa-solid fa-bars"
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
@@ -60,25 +60,25 @@ import EssentialLink from "components/EssentialLink.vue";
 const linksList = [
   {
     title: "Home",
-    icon: "school",
+    icon: "fa-regular fa-user",
     link: "/",
     name: "docs",
   },
   {
     title: "Projects",
-    icon: "school",
+    icon: "fa-regular fa-file-code",
     link: "/projects",
     name: "projects",
   },
   {
     title: "About",
-    icon: "school",
+    icon: "fa-solid fa-info",
     link: "/about",
     name: "about",
   },
   {
     title: "Contact",
-    icon: "phone",
+    icon: "fa-regular fa-address-book",
     link: "/contact",
     name: "contact",
   },
