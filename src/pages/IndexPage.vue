@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-5 col-lg-4 col-xl-3 text-left">
+      <div class="col-10 col-md-5 col-lg-4 col-xl-3 text-left">
         <div class="text-h2 text-weight-light q-pb-lg gt-sm">
           Hi, I'm Joseph.
         </div>
@@ -51,7 +51,7 @@
         enter-active-class="animated fadeIn"
         leave-active-class="animated fadeOut"
       >
-        <div class="col-12 col-md-5 col-lg-4 col-xl-3 text-center gt-sm">
+        <div class="col-10 col-md-5 col-lg-4 col-xl-3 text-center gt-sm">
           <div class="row justify-center full-height">
             <div
               class="col-6 bg-dark"

@@ -133,9 +133,7 @@ export default {
   name: "ProjectsPage",
 
   setup() {
-    const githubApiUrl = `https://api.github.com/users/${
-      import.meta.env.VITE_GITHUB_USERNAME
-    }`;
+    const githubApiUrl = "https://api.github.com/users/jbcallv";
 
     const githubAvatarUrl = ref(null);
     const githubFollowerCount = ref(0);
