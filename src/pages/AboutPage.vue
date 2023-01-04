@@ -1,5 +1,5 @@
 <template>
-  <q-page padding> About page coming soon </q-page>
+  <q-page class="flex flex-center"> About page coming soon </q-page>
 </template>
 
 <script>

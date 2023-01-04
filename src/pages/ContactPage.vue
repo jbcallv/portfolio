@@ -183,6 +183,9 @@ export default {
         })
         .catch((error) => {
           console.log(error);
+          makeErrorNotification(
+            "Failed to send message. Email me directly at jbcallv@gmail.com"
+          );
         });
     }
 
@@ -197,6 +200,13 @@ export default {
     function makeSuccessNotification(message) {
       $q.notify({
         type: "positive",
+        message: message,
+      });
+    }
+
+    function makeErrorNotification(message) {
+      $q.notify({
+        type: "negative",
         message: message,
       });
     }
