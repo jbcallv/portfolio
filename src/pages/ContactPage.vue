@@ -22,8 +22,8 @@
           <div
             class="text-h6 text-center text-weight-light text-grey lt-md q-pb-lg"
           >
-            Full Stack Developer from Virginia, USA. I create web applications
-            with modern frameworks. Welcome to my corner of the internet!
+            Want to get in touch? Either send me an email by filling out the
+            form or connect with me through social media
           </div>
 
           <div
