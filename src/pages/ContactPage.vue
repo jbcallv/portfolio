@@ -178,7 +178,7 @@ export default {
         )
         .then(() => {
           makeSuccessNotification(
-            "Success. Please allow 24-48 hours for me to respond"
+            "Your message has been sent. I will get back to you as soon as possible"
           );
         })
         .catch((error) => {
