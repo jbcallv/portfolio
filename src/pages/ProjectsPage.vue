@@ -1,87 +1,93 @@
 <template>
-  <q-page padding>
-    <div class="row flex-center q-pb-md">
-      <q-avatar size="150px">
-        <q-img :src="githubAvatarUrl" />
-      </q-avatar>
-    </div>
+  <transition
+    appear
+    enter-active-class="animated fadeIn"
+    leave-active-class="animated fadeOut"
+  >
+    <q-page padding>
+      <div class="row flex-center q-pb-md">
+        <q-avatar size="150px">
+          <q-img :src="githubAvatarUrl" />
+        </q-avatar>
+      </div>
 
-    <div class="row flex-center q-pb-md">
-      <q-btn
-        no-caps
-        label="@jbcallv"
-        class="text-accent"
-        @click="openURL('https://github.com/jbcallv')"
-      />
-    </div>
+      <div class="row flex-center q-pb-md">
+        <q-btn
+          no-caps
+          label="@jbcallv"
+          class="text-accent"
+          @click="openURL('https://github.com/jbcallv')"
+        />
+      </div>
 
-    <div class="row flex-center text-center q-pb-md text-body1">
-      {{ githubProfileBio }}
-    </div>
+      <div class="row flex-center text-center q-pb-md text-body1">
+        {{ githubProfileBio }}
+      </div>
 
-    <div class="row flex-center text-center q-pb-md text-body1">
-      {{ githubFollowerCount }} followers
-    </div>
+      <div class="row flex-center text-center q-pb-md text-body1">
+        {{ githubFollowerCount }} followers
+      </div>
 
-    <q-table
-      grid
-      :rows="rows"
-      :columns="columns"
-      row-key="name"
-      hide-header
-      :rows-per-page-options="[10]"
-    >
-      <template v-slot:item="props">
-        <div class="q-pa-xs col-xs-12 col-sm-6 col-md-6">
-          <q-card
-            v-ripple
-            class="bg-dark cursor-pointer q-hoverable"
-            @click="openURL(props.row.link)"
-          >
-            <div class="q-focus-helper"></div>
-            <q-card-section class="text-h6 text-weight-bold">
-              {{ props.row.name }}
-            </q-card-section>
+      <q-table
+        grid
+        :rows="rows"
+        :columns="columns"
+        row-key="name"
+        hide-header
+        :rows-per-page-options="[10]"
+      >
+        <template v-slot:item="props">
+          <div class="q-pa-xs col-xs-12 col-sm-6 col-md-6">
+            <q-card
+              v-ripple
+              class="bg-dark cursor-pointer q-hoverable"
+              @click="openURL(props.row.link)"
+            >
+              <div class="q-focus-helper"></div>
+              <q-card-section class="text-h6 text-weight-bold">
+                {{ props.row.name }}
+              </q-card-section>
 
-            <q-card-section>
-              <div class="text-body1">{{ props.row.description }}</div>
-            </q-card-section>
+              <q-card-section>
+                <div class="text-body1">{{ props.row.description }}</div>
+              </q-card-section>
 
-            <q-card-section>
-              <div class="row">
-                <div class="text-body1 q-pr-md">
-                  <q-icon
-                    name="fa-solid fa-code"
-                    style="vertical-align: text-top"
-                    class="q-pr-xs"
-                  />
-                  {{ props.row.language }}
+              <q-card-section>
+                <div class="row">
+                  <div class="text-body1 q-pr-md">
+                    <q-icon
+                      name="fa-solid fa-code"
+                      style="vertical-align: text-top"
+                      class="q-pr-xs"
+                    />
+                    {{ props.row.language }}
+                  </div>
+
+                  <div class="text-body1 q-pr-md">
+                    <q-icon
+                      name="fa-solid fa-star"
+                      style="vertical-align: text-top"
+                      class="q-pr-xs"
+                    />
+                    {{ props.row.stars }}
+                  </div>
+
+                  <div class="text-body1">
+                    <q-icon
+                      name="fa-solid fa-code-branch"
+                      style="vertical-align: text-top"
+                      class="q-pr-xs"
+                    />
+                    {{ props.row.forks }}
+                  </div>
                 </div>
-
-                <div class="text-body1 q-pr-md">
-                  <q-icon
-                    name="fa-solid fa-star"
-                    style="vertical-align: text-top"
-                    class="q-pr-xs"
-                  />
-                  {{ props.row.stars }}
-                </div>
-
-                <div class="text-body1">
-                  <q-icon
-                    name="fa-solid fa-code-branch"
-                    style="vertical-align: text-top"
-                    class="q-pr-xs"
-                  />
-                  {{ props.row.forks }}
-                </div>
-              </div>
-            </q-card-section>
-          </q-card>
-        </div>
-      </template>
-    </q-table>
-  </q-page>
+              </q-card-section>
+            </q-card>
+          </div>
+        </template>
+      </q-table>
+    </q-page>
+  </transition>
 </template>
 
 <script>
