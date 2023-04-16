@@ -13,7 +13,7 @@
               style="position: absolute; height: 590px; width: 400px"
             ></div>
             <q-img
-              src="images/joseph.jpg"
+              src="images/joseph.jpeg"
               class="q-mt-lg shadow-6"
               style="height: 590px; width: 330px"
             />
@@ -58,7 +58,7 @@
               style="position: absolute; height: 590px; width: 400px"
             ></div>
             <q-img
-              src="images/joseph.jpg"
+              src="images/joseph.jpeg"
               class="q-mt-lg shadow-6"
               style="height: 590px; width: 350px"
             />
