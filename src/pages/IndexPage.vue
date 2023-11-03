@@ -29,15 +29,17 @@
           </div>
 
           <div class="text-h5 text-weight-light text-grey gt-sm q-pb-lg">
-            Full Stack Developer from Virginia, USA. I create web applications
-            with modern frameworks. Welcome to my corner of the internet!
+            Lead Software Engineer from Virginia, USA. I write full-stack
+            applications with modern technologies. Welcome to my corner of the
+            internet!
           </div>
 
           <div
             class="text-h6 text-center text-weight-light text-grey lt-md q-pb-lg"
           >
-            Full Stack Developer from Virginia, USA. I create web applications
-            with modern frameworks. Welcome to my corner of the internet!
+            Lead Software Engineer from Virginia, USA. I write full-stack
+            applications with modern technologies. Welcome to my corner of the
+            internet!
           </div>
 
           <q-btn

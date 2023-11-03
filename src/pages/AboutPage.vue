@@ -126,7 +126,6 @@
                   >
                   <q-item class="text-body1">Firebase, Supabase</q-item>
                   <q-item class="text-body1"> Netlify, DigitalOcean</q-item>
-                  <q-item class="text-body1">Vim, VSCode, Git</q-item>
                 </q-card-section>
               </q-card>
             </div>
